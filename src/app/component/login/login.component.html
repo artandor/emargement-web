@@ -1,0 +1,20 @@
+<div class="card-header">
+  <h2>Connexion</h2>
+</div>
+<div class="card-body">
+  <form (submit)="onSubmit()">
+    <div class="form-group">
+      <label for="loginEmail">Adresse Email</label>
+      <input [(ngModel)]="loginEmail" aria-describedby="emailHelp" autocomplete="email" class="form-control"
+             id="loginEmail" name="loginEmail"
+             placeholder="Supermail@gmail.com" type="email">
+    </div>
+    <div class="form-group">
+      <label for="login-password">Mot de passe</label>
+      <input autocomplete="current-password" class="form-control" id="login-password" placeholder="Mot5963!<"
+             type="password">
+    </div>
+    <button class="btn btn-primary" type="submit">Se connecter</button>
+
+  </form>
+</div>
