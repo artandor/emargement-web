@@ -2,19 +2,29 @@
   <h2>Connexion</h2>
 </div>
 <div class="card-body">
-  <form (submit)="onSubmit()">
+  <form  [formGroup]="angForm" novalidate>
     <div class="form-group">
-      <label for="loginEmail">Adresse Email</label>
-      <input [(ngModel)]="loginEmail" aria-describedby="emailHelp" autocomplete="email" class="form-control"
+      <label >Adresse Email</label>
+      <input [(ngModel)]="loginEmail" aria-describedby="emailHelp" autocomplete="email" class="form-control" formControlName="email"
              id="loginEmail" name="loginEmail"
-             placeholder="Supermail@gmail.com" type="email">
+             placeholder="Supermail@gmail.com" type="email" required="">
+             <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['email'].errors.required">
+                email est requis
+              </div>
+          </div>
     </div>
     <div class="form-group">
       <label for="login-password">Mot de passe</label>
-      <input autocomplete="current-password" class="form-control" id="login-password" placeholder="Mot5963!<"
-             type="password">
+      <input autocomplete="current-password" formControlName="mdp" id="login-password" placeholder="Mot5963!<"
+             type="password" class="form-control">
+             <div *ngIf="angForm.controls['mdp'].invalid && (angForm.controls['mdp'].dirty || angForm.controls['mdp'].touched)" class="alert alert-danger">
+              <div *ngIf="angForm.controls['mdp'].errors.required">
+                mot de passe est requis
+              </div>
+          </div>
     </div>
-    <button class="btn btn-primary" type="submit">Se connecter</button>
+    <button class="btn btn-primary" type="submit"  [disabled]="angForm.pristine || angForm.invalid">Se connecter</button>
 
   </form>
 </div>
