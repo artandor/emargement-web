@@ -9,10 +9,12 @@ import {HomepageComponent} from './page/homepage/homepage.component';
 import {LoginComponent} from './component/login/login.component';
 import {AuthComponent} from './page/auth/auth.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {TaskComponent} from './page/task/task.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomepageComponent},
-  {path: 'auth', component: AuthComponent}
+  {path: 'auth', component: AuthComponent},
+  {path: 'tasks', component: TaskComponent}
 ];
 
 @NgModule({
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
     FooterComponent,
     HomepageComponent,
     LoginComponent,
-    AuthComponent
+    AuthComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,15 @@
+<h1>Tâches</h1>
+<div class="row">
+  <div *ngFor="let task of getAllTasks()" class="col-4 px-2 card">
+    <img alt="..." class="card-img-top" src="{{ task.photo }}">
+    <div class="card-body">
+      <h5 class="card-title">{{ task.name }}</h5>
+      <p class="card-text">{{ task.description }}</p>
+      <p>
+        {{task.nextDueDate|date}}
+        <span class="badge badge-dark">{{task.pointValue}} points</span>
+      </p>
+      <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+    </div>
+  </div>
+</div>
