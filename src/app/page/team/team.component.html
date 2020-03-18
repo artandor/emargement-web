@@ -1,3 +1,13 @@
-<p>
-  team works!
-</p>
+<div class="row">
+  <div *ngFor="let team of getAllTeams()" class="col-4 px-2 mt-2 ml-2 card">
+    <img alt="..." class="card-img-top" src="https://deal4event.files.wordpress.com/2016/08/team-building.jpg">
+    <div class="card-body">
+      <h5 class="card-title">{{team.name_team}}</h5>
+      <p class="card-text">{{team.tagline}}</p>
+      <p>
+        Les membres (todo)
+      </p>
+      <!--<a href="#" class="btn btn-primary">Go somewhere</a>-->
+    </div>
+  </div>
+</div>
